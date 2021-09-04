@@ -36,6 +36,46 @@ ball.penup()
 ball.goto(0, 0)
 
 
+#* Function Paddle 1
+def paddle_1_up():
+    y = paddle_1.ycor()
+    y += 20
+    paddle_1.sety(y)
+
+def paddle_1_down():
+    y = paddle_1.ycor()
+    y -= 20
+    paddle_1.sety(y)
+
+
+#* Function Paddle 2
+def paddle_2_up():
+    y = paddle_2.ycor()
+    y += 20
+    paddle_2.sety(y)
+
+def paddle_2_down():
+    y = paddle_2.ycor()
+    y -= 20
+    paddle_2.sety(y)
+
+#* Keyboard Bindings
+wn.listen()
+wn.onkeypress(paddle_1_up, "w")
+wn.onkeypress(paddle_1_down, "s")
+wn.onkeypress(paddle_2_up, "Up")
+wn.onkeypress(paddle_2_down, "Down")
+
+
+
+
+
+
+
+
+
+
+
 
 #* Main Game Loop
 while True:
