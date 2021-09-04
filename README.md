@@ -1,2 +1,2 @@
 # Pong
-First Game
+First Game with Python
