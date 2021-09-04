@@ -66,6 +66,8 @@ def paddle_2_down():
 wn.listen()
 wn.onkeypress(paddle_1_up, "w")
 wn.onkeypress(paddle_1_down, "s")
+wn.onkeypress(paddle_1_up, "W")
+wn.onkeypress(paddle_1_down, "S")
 wn.onkeypress(paddle_2_up, "Up")
 wn.onkeypress(paddle_2_down, "Down")
 
@@ -96,4 +98,15 @@ while True:
 
     if ball.xcor() < -390:
         ball.goto(0, 0)
+        ball.dx *= -1
+
+
+# Paddle & Ball Collision
+
+    if ball.xcor() > 340 and ball.xcor() < 350 and (ball.ycor() < paddle_2.ycor() + 50 and ball.ycor() > paddle_2.ycor() - 50):
+        ball.setx(340) 
+        ball.dx *= -1
+
+    if ball.xcor() < -340 and ball.xcor() > -350 and (ball.ycor() < paddle_1.ycor() + 50 and ball.ycor() > paddle_1.ycor() - 50):
+        ball.setx(-340) 
         ball.dx *= -1
